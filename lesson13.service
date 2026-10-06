@@ -1,0 +1,13 @@
+[Unit]
+Description= http service
+After=network-online.target
+
+[Service]
+User=webuser
+Group=webuser
+WorkingDirectory=/var/www/http_service
+ExecStart=/var/www/http_service/venv/bin/python /var/www/http_service/http_service.py
+Restart=Always
+
+[Install]
+WantedBy=multi-user.target
