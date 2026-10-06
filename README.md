@@ -81,7 +81,7 @@ log() {
 user_add() {
 if id "$APP_USER"  &>/dev/null; then
 	log "$APP_USER already exists"
-else useradd -m -s /bin/bash "$APP_USER" >> "$LOG_FILE" 2>&1 
+else useradd /bin/bash "$APP_USER" >> "$LOG_FILE" 2>&1 
  log "User $APP_USER successfully created"
 fi
 }
